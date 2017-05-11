@@ -22,27 +22,27 @@ or alternatively have a look at `build-with-dependencies.sh`
 
 ### If Scala code needs to be compiled first 
 ```
-			<plugin>
-				<groupId>net.alchim31.maven</groupId>
-				<artifactId>scala-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>scala-compile-first</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>add-source</goal>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>scala-test-compile</id>
-						<phase>process-test-resources</phase>
-						<goals>
-							<goal>testCompile</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+<plugin>
+	<groupId>net.alchim31.maven</groupId>
+	<artifactId>scala-maven-plugin</artifactId>
+	<executions>
+		<execution>
+			<id>scala-compile-first</id>
+			<phase>process-resources</phase>
+			<goals>
+				<goal>add-source</goal>
+				<goal>compile</goal>
+			</goals>
+		</execution>
+		<execution>
+			<id>scala-test-compile</id>
+			<phase>process-test-resources</phase>
+			<goals>
+				<goal>testCompile</goal>
+			</goals>
+		</execution>
+	</executions>
+</plugin>
 ```
 http://davidb.github.io/scala-maven-plugin/example_java.html
 
