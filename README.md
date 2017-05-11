@@ -20,7 +20,33 @@ mvn -T 1C clean compile assembly:single
 ```
 or alternatively have a look at `build-with-dependencies.sh`
 
-### Example run
+### If Scala code needs to be compiled first 
+```
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>scala-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>scala-compile-first</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>add-source</goal>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>scala-test-compile</id>
+						<phase>process-test-resources</phase>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+```
+http://davidb.github.io/scala-maven-plugin/example_java.html
+
+## Example run
 ```bash
 $java -jar ./target/empty-project-1.0-jar-with-dependencies.jar 
  Hello World!
